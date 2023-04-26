@@ -6,7 +6,6 @@ This API provides a mechanism to retrieve books by author and/or title, and allo
 ## URLs
 URL calls registered are:
 /books/
-/add-books/
 
 ## Format
 All endpoints of this API receives and return data only in json format.
