@@ -22,9 +22,8 @@ class BooksViewSet(viewsets.ModelViewSet):
     
     serializer_class = BookSerializer
     queryset = Book.objects.all()
-    lookup_field = 'title'
     filter_backends = [django_filters.rest_framework.DjangoFilterBackend]   
-    filter_fields = ('author')
+    filter_fields = ('author, title')
 
     def create(self, **kwargs):
         try:
