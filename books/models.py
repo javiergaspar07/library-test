@@ -6,7 +6,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 
 
-ISBN_REGEX = r'\d{10}$'
+ISBN_REGEX = r'^\d{9}[\d|X]$'
 CURRENT_YEAR = datetime.now().year
 
 class Book(models.Model):
@@ -21,7 +21,7 @@ class Book(models.Model):
     author = models.CharField(max_length=200)
     year_of_publication = models.PositiveIntegerField(
         validators=[
-            MinValueValidator(1),
+            MinValueValidator(0),
             MaxValueValidator(CURRENT_YEAR)
         ]
     )
