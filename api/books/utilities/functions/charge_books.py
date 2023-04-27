@@ -25,20 +25,15 @@ def charge_books():
                           'publisher', 'image_URL_S','image_URL_M', 'image_URL_L']
     cleaned_df = df.where(pd.notnull(df), None)
 
-    # Data validation
-    books_serializers = []
+    # Data validation and books creation
+    books_data = []
     for book in cleaned_df.values.tolist():
         book_dict = dict(zip(equivalent_columns, book))
         book_dict['isbn'] = book_dict.get('isbn').upper()
         serializer = BookSerializer(data=book_dict)
         if not serializer.is_valid():
             continue
-        books_serializers.append(serializer)
-    
-    # Books creation
-    books_data = []
-    for book in books_serializers:
-        book.save()
-        books_data.append(book.data)
+        serializer.save()
+        books_data.append(serializer.data)
     
     return books_data
