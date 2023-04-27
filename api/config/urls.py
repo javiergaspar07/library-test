@@ -9,5 +9,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Books
-    path('books/', include(('books.urls', 'books'), namespace='books')),
+    path('books/', include(('api.books.urls', 'books'), namespace='books')),
 ]

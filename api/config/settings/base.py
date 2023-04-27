@@ -28,7 +28,7 @@ THIRD_PARTY_APPS = [
     'django_filters'
 ]
 LOCAL_APPS = [
-    'books'
+    'api.books'
 ]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -42,7 +42,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'api.config.urls'
 
 TEMPLATES = [
     {
@@ -60,7 +60,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'api.config.wsgi.application'
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

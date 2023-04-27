@@ -8,13 +8,13 @@ from rest_framework.response import Response
 import django_filters
 
 # Models
-from books.models import Book
+from api.books.models import Book
 
 # Serializers
-from books.serializers import BookSerializer
+from api.books.serializers import BookSerializer
 
 # Utils
-from utilities.functions.charge_books import charge_books
+from api.books.utilities.functions.charge_books import charge_books
     
     
 class BooksViewSet(viewsets.ModelViewSet):

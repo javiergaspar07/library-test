@@ -2,8 +2,8 @@
 import pandas as pd
 
 # Local
-from books.serializers import BookSerializer
-from books.models import Book
+from api.books.serializers import BookSerializer
+from api.books.models import Book
 
 def charge_books():
     """
@@ -16,7 +16,7 @@ def charge_books():
     
     # Reading csv file to charge books
     df = pd.read_csv(
-        "utilities/datasets/books.csv",
+        "api/books/utilities/datasets/books.csv",
         encoding="ISO-8859-1",
         sep=";",
         on_bad_lines="skip"

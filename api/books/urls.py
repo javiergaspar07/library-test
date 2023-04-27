@@ -4,7 +4,7 @@
 from django.urls import path, include
 
 # Views
-from books.views import BooksViewSet
+from api.books.views import BooksViewSet
 
 # Django REST Framework
 from rest_framework.routers import DefaultRouter

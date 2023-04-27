@@ -1,4 +1,4 @@
-from config.settings.base import *
+from api.config.settings.base import *
 
 DEBUG = True
 
